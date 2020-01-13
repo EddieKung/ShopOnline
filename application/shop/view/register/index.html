@@ -1,0 +1,132 @@
+<!--包含头部文件-->
+{include file="public/header" /}
+<div class="cl pd-5 bg-1 bk-gray mt-20" style="text-align:center;"> <h1>学生售卖入驻申请</h1></div>
+<article class="page-container">
+	<form class="form form-horizontal"  method="post" action="{:url('register/add')}">
+	基本信息：
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商店名称：</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所属学校：</label>
+			<div class="formControls col-xs-8 col-sm-2"> 
+				<span class="select-box">
+				<select name="area_id" class="select areaId">
+					<option value="0">--请选择--</option>
+					{volist name="areas" id="vo"}
+					<option value="{$vo.id}">{$vo.name}</option>
+				  {/volist}
+				</select>
+				</span>
+			</div>
+			<div class="formControls col-xs-8 col-sm-2">
+				<span class="select-box">
+				<select name="se_area_id" class="select se_area_id">
+					<option value="0">--请选择--</option>
+				</select>
+				</span> 
+			</div>
+		</div>
+		
+		<div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">头像：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload"  type="file" multiple="true" >
+                <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
+                <input id="file_upload_image" name="student_logo" type="hidden" multiple="true" value="">
+              </div>
+        </div>
+        <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">学生证照：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload_other"  type="file" multiple="true" >
+                <img style="display: none" id="upload_org_code_img_other" src="" width="150" height="150">
+                <input id="file_upload_image_other" name="student_picture" type="hidden" multiple="true" value="">
+              </div>
+        </div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">个人介绍：</label>
+					<div class="formControls col-xs-8 col-sm-3">
+						<textarea name="presentation" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" onKeyUp="$.Huitextarealength(this,100)"></textarea>
+						<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+					</div>
+				</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">学生证号:</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="student_id">
+			</div>
+		</div>
+		<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">院系:</label>
+				<div class="formControls col-xs-8 col-sm-3">
+					<input type="text" class="input-text" value="" placeholder="" id="" name="department">
+				</div>
+		</div>
+		<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">专业/班级:</label>
+				<div class="formControls col-xs-8 col-sm-3">
+					<input type="text" class="input-text" value="" placeholder="" id="" name="profession">
+				</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">联系电话:</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="mobile">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">邮箱:</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="email">
+			</div>
+		</div>
+
+		账号信息：
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">用户名:</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="username">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">密码:</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="password" class="input-text" value="" placeholder="" id="" name="password">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button  class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 申请</button>	
+			</div>
+		</div>
+	</form>
+</article>
+
+<!--包含尾部文件-->
+{include file="public/footer" /}
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script>
+ var SCOPE = {
+   'area_url' : '{:url('api/area/getAreasByFatherId')}',
+    'classification_url' : '{:url('api/classification/getClassificationByFatherId')}',
+	'uploadify_swf' : '__STATIC__/admin/uploadify/uploadify.swf',
+	'image_upload' : '{:url('api/image/upload')}',
+ };
+</script>
+<!--分配编辑器-->
+<script>
+$(function(){
+	var ue = UE.getEditor('editor');
+	var ue1 = UE.getEditor('editor1');
+});
+</script>
+</body>
+</html>

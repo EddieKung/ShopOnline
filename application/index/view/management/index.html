@@ -1,0 +1,183 @@
+<!--包含头部文件-->
+{include file="public/head,public/nav"}
+<hr class="hrstyle"> 
+<div style="width:1200px;height:600px;border:1px solid #ccc;margin-left: 74px;margin-top:25px">
+  <div style="width:200px;height:600px;box-sizing: border-box;float: left;margin-left: 80px;">
+    <div class="nav">
+      <ul>
+        <li><a href=""><i></i><span>我的订单</span></a></li>
+        <li><a href=""><i></i><span>我的兑换券</span></a></li>
+        <li><a href=""><i></i><span>我的收藏</span></a></li>
+        <li><a target="_blank" href=""><i></i><span>在线客服</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="width:716px;height:600px;box-sizing: border-box;float: left;margin-left: 80px;">
+    <div class="p-item-info-more">
+      <div class="iim-wrapper">
+        <div class="spec-nav ">
+          <div class="nav-bar"></div>
+          <div class="w-spec-nav" >
+            <ul class="sn-list">
+              <li class="spec-nav-current">
+                <i></i><a><span>全部</span></a>
+              </li>
+              <li class="">
+                <i></i><a><span>未付款</span></a>
+              </li>
+              <li class="">
+                <i></i><a><span>已使用</span></a>
+              </li>
+              <li class="">
+                <i></i><a><span>未使用</span></a>
+              </li>
+              <li class="">
+                <i></i><a><span>待评价</span></a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <ul class="j-info-all">
+          <li class="tab">
+            <div class="ia-shop-branch">
+              <div class="w-shop-branch">
+                <h3 class="w-section-header">全部订单信息</h3>
+                  <div style="border-bottom:2px solid #2b3181;">
+                    <table class="t1 t1-border t1-bordered t1-bg t1-sort">                   
+                      <tbody>
+
+                        <tr class="text-c">                         
+                          <td width="100"></td>
+                          <td width="180"><img src="" style="width: 180px; height: 60px;"></td>
+                          <td width="110"></td>
+                          <td width="70"> 元</td>                          
+                          <td width="50" class="td-status"></td>
+                          <td width="100" class="td-manage">
+                            <a href="{:url('order/detail',['id'=>$vo.id])}">查看订单信息</a>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li class="tab">
+              <div class="ia-shop-branch">
+                <div class="w-shop-branch">
+                  <h3 class="w-section-header">未付款订单信息</h3>
+                  <div style="border-bottom:2px solid #2b3181;">
+                      <table class="t1 t1-border t1-bordered t1-bg t1-sort">                   
+                        <tbody>
+  
+                          <tr class="text-c">                         
+                            <td width="100"></td>
+                            <td width="180"><img src="" style="width: 180px; height: 60px;"></td>
+                            <td width="110"></td>
+                            <td width="70"> 元</td>                          
+                            <td width="50" class="td-status"></td>
+                            <td width="100" class="td-manage">
+                              <a href="{:url('order/detail',['id'=>$vo.id])}">查看订单信息</a>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+          </li>
+          <li class="tab">
+              <div class="ia-shop-branch">
+                <div class="w-shop-branch">
+                  <h3 class="w-section-header">已使用订单信息</h3>
+                  <div style="border-bottom:2px solid #2b3181;">
+                      <table class="t1 t1-border t1-bordered t1-bg t1-sort">                   
+                        <tbody>
+  
+                          <tr class="text-c">                         
+                            <td width="100"></td>
+                            <td width="180"><img src="" style="width: 180px; height: 60px;"></td>
+                            <td width="110"></td>
+                            <td width="70"> 元</td>                          
+                            <td width="50" class="td-status"></td>
+                            <td width="100" class="td-manage">
+                              <a href="{:url('order/detail',['id'=>$vo.id])}">查看订单信息</a>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="tab">
+                <div class="ia-shop-branch">
+                  <div class="w-shop-branch">
+                    <h3 class="w-section-header">未使用订单信息</h3>
+                    <div style="border-bottom:2px solid #2b3181;">
+                        <table class="t1 t1-border t1-bordered t1-bg t1-sort">                   
+                          <tbody>
+    
+                            <tr class="text-c">                         
+                              <td width="100"></td>
+                              <td width="180"><img src="" style="width: 180px; height: 60px;"></td>
+                              <td width="110"></td>
+                              <td width="70"> 元</td>                          
+                              <td width="50" class="td-status"></td>
+                              <td width="100" class="td-manage">
+                                <a href="{:url('order/detail',['id'=>$vo.id])}">查看订单信息</a>
+                              </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </div>
+            </li>
+            <li class="tab">
+                <div class="ia-shop-branch">
+                  <div class="w-shop-branch">
+                    <h3 class="w-section-header">待评价订单信息</h3>
+                    <div style="border-bottom:2px solid #2b3181;">
+                        <table class="t1 t1-border t1-bordered t1-bg t1-sort">                   
+                          <tbody>
+    
+                            <tr class="text-c">                         
+                              <td width="100"></td>
+                              <td width="180"><img src="" style="width: 180px; height: 60px;"></td>
+                              <td width="110"></td>
+                              <td width="70"> 元</td>                          
+                              <td width="50" class="td-status"></td>
+                              <td width="100" class="td-manage">
+                                <a href="{:url('order/detail',['id'=>$vo.id])}">查看订单信息</a>
+                              </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script>
+        $(".sn-list li").click(function(){
+        var index = $(".sn-list li").index(this)
+        $(".sn-list li").removeClass("spec-nav-current");
+        $(".j-info-all .tab").css({display: "none"});
+        $(this).addClass("spec-nav-current");
+        $(".j-info-all .tab").eq(index).css({display: "block"});
+        });
+  </script>

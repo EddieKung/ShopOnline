@@ -1,0 +1,46 @@
+<!--包含头部文件-->
+{include file="public/top" /}
+
+<body style="background-image:url(__STATIC__/index/image/bis_fengmian.jpg);background-size:100% 100%;">
+  <div class="ui container" style="padding-top:10%">
+    <div class="ui grid center aligned">
+      <div class="row">
+        <div class="sixteen wide tablet six wide computer column">
+          <div class="ui left aligned segment">
+            <div id="form1" class="ui form">
+              <h1 class="ui header center aligned">
+                <img src="__STATIC__/index/image/logo.png" alt="stagblogo" class="ui small image">
+                <div class="content">
+                  <p>商户登陆系统</p>
+                </div>
+              </h1>
+              <form class="form form-horizontal" action="{:url('login/index')}" method="post">
+                <div class="field">
+                  <label>
+                    用户名:
+                  </label>
+                  <div class="ui fluid icon input">
+                    <input name="username" style="width:100%!important;min-width:100%;width:100%;">
+                  </div>
+                </div>
+                <div class="field">
+                  <label>
+                    密码:
+                  </label>
+                  <div class="ui fluid icon input">
+                    <input type="password" name="password" style="width:100%!important;min-width:100%;width:100%;">
+                  </div>
+                </div>
+                <div class="field">
+                  <input type="submit" class="ui teal right labeled icon button fluid" value="登&nbsp;&nbsp;&nbsp;&nbsp;陆">
+                  <a class="ui teal right labeled icon button fluid" href="{:url('register/index')}">申请&nbsp;&nbsp;入驻</a>
+                  <input type="reset" class="ui blue right labeled icon button fluid" value="取&nbsp;&nbsp;&nbsp;&nbsp;消">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
